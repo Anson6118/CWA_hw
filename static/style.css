@@ -1,0 +1,373 @@
+/* Tailwind-like Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0f172a; /* slate-900 */
+    color: #f8fafc; /* slate-50 */
+}
+
+/* Map Container */
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Glassmorphism Panel Base */
+.panel {
+    position: absolute;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.85); /* slate-900/85 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* Top Left Dashboard */
+.top-left-panel {
+    top: 20px;
+    left: 20px;
+    width: 320px;
+}
+
+.title-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.title-bar h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.badge {
+    background: #0ea5e9; /* sky-500 */
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.meta-info {
+    font-size: 0.8rem;
+    color: #94a3b8; /* slate-400 */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.meta-info span {
+    color: #e2e8f0; /* slate-200 */
+}
+
+/* Stat Grid 2x2 */
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stat-card {
+    background: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-title {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.stat-value small {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.stat-value-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.stat-sub {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Right Sidebar Controls */
+.right-panel {
+    top: 20px;
+    right: 20px;
+    width: 240px;
+}
+
+.layer-group {
+    margin-bottom: 20px;
+}
+
+.layer-title {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* Glass Buttons */
+.layer-btn {
+    width: 100%;
+    background: rgba(30, 41, 59, 0.6);
+    color: #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.layer-btn:hover {
+    background: rgba(51, 65, 85, 0.8);
+}
+
+.layer-btn.active {
+    background: rgba(2, 132, 199, 0.2); /* sky-600/20 */
+    border-color: #0284c7; /* sky-600 */
+    color: #38bdf8; /* sky-400 */
+}
+
+/* Map Switcher Toggle */
+.map-switcher {
+    display: flex;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.switcher-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.switcher-btn.active {
+    background: #0284c7;
+    color: white;
+}
+
+/* Primary Action Button */
+.btn-primary {
+    width: 100%;
+    background: #059669; /* emerald-600 */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #047857;
+}
+
+/* Custom Checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    cursor: pointer;
+}
+.checkbox-container input {
+    margin-right: 8px;
+}
+
+/* Legend Panel */
+.legend-panel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    width: 320px;
+}
+
+.legend-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.legend-gradient {
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(to right, #3b82f6, #0ea5e9, #10b981, #f59e0b, #ef4444);
+    margin-bottom: 6px;
+}
+
+.legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+/* Custom Leaflet Marker Labels */
+.custom-pill-label {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 4px 8px;
+    font-size: 13px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    white-space: nowrap;
+}
+
+/* Leaflet dark theme overwrites */
+.leaflet-popup-content-wrapper {
+    background: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(8px);
+    color: #f8fafc !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.leaflet-popup-tip {
+    background: rgba(15, 23, 42, 0.9) !important;
+}
+.popup-custom h3 { margin-bottom: 5px; color: #38bdf8;}
+.popup-custom p { margin-bottom: 3px; font-size: 13px;}
+
+/* Period slider */
+.period-control {
+    margin-bottom: 16px;
+}
+.period-control input[type="range"] {
+    width: 100%;
+    accent-color: #0ea5e9;
+    cursor: pointer;
+}
+.period-hint {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.error-box {
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fecaca;
+    font-size: 0.8rem;
+}
+
+.checkbox-container + .checkbox-container {
+    margin-top: 8px;
+}
+
+/* Legend swatches (discrete bins, same colors as map) */
+.legend-swatches {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+/* Marker variants */
+.pill-wrapper .custom-pill-label {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.custom-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* 7-day forecast inside popup */
+.popup-forecast {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 12px;
+    color: #cbd5e1;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.popup-forecast table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.popup-forecast td {
+    padding: 2px 6px 2px 0;
+    white-space: nowrap;
+}
+
+/* Small screens: stack panels so the map stays usable */
+@media (max-width: 760px) {
+    .top-left-panel { width: calc(100% - 20px); top: 10px; left: 10px; padding: 12px; }
+    .stat-grid { display: none; }
+    .right-panel { top: auto; bottom: 90px; right: 10px; width: 180px; padding: 12px; }
+    .legend-panel { right: 10px; bottom: 10px; width: calc(100% - 20px); }
+}
+
+/* Dark basemap = OpenStreetMap tiles darkened with a filter */
+.tiles-dark {
+    filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.5);
+}

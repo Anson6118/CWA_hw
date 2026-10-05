@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣天氣預報 GIS</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Top Left Dashboard / Stats Panel -->
+    <div class="panel top-left-panel">
+        <div class="title-bar">
+            <h1>台灣天氣預報 GIS</h1>
+            <span class="badge">SQLite</span>
+        </div>
+
+        <div class="meta-info">
+            <p>預報時段：<span id="period-label">載入中...</span></p>
+            <p>資料來源：<span id="source">-</span></p>
+            <p>擷取時間：<span id="fetched-at">-</span></p>
+            <p>縣市數量：<span id="loc-count">-</span></p>
+        </div>
+
+        <div class="period-control">
+            <input type="range" id="period-slider" min="0" max="0" value="0" step="1">
+            <div class="period-hint">拖曳切換未來 7 天各 12 小時時段</div>
+        </div>
+
+        <!-- 2x2 Stat Grid -->
+        <div class="stat-grid">
+            <div class="stat-card">
+                <span class="stat-title">最高溫</span>
+                <span class="stat-value"><span id="max-temp">-</span> <small>°C</small></span>
+                <span class="stat-sub" id="max-temp-loc">-</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">最低溫</span>
+                <span class="stat-value"><span id="min-temp">-</span> <small>°C</small></span>
+                <span class="stat-sub" id="min-temp-loc">-</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">最高降雨機率</span>
+                <span class="stat-value"><span id="max-rain">-</span> <small>%</small></span>
+                <span class="stat-sub" id="max-rain-loc">-</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-title">天氣現象</span>
+                <span class="stat-value-text" id="common-weather">-</span>
+                <span class="stat-sub">多數地區</span>
+            </div>
+        </div>
+
+        <div class="error-box" id="error-box" hidden></div>
+    </div>
+
+    <!-- Right Control Sidebar -->
+    <div class="panel right-panel">
+        <div class="layer-group">
+            <div class="layer-title">圖層</div>
+            <button class="layer-btn active" id="btn-temp">🌡️ 氣溫</button>
+            <button class="layer-btn" id="btn-rain">🌧️ 降雨機率</button>
+        </div>
+
+        <div class="layer-group">
+            <label class="checkbox-container">
+                <input type="checkbox" checked id="toggle-marker">
+                數值標籤
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" checked id="toggle-geojson">
+                縣市界 GeoJSON 著色
+            </label>
+        </div>
+
+        <div class="layer-group">
+            <div class="layer-title">底圖</div>
+            <div class="map-switcher">
+                <button class="switcher-btn active" id="base-dark">深色</button>
+                <button class="switcher-btn" id="base-street">街道圖</button>
+            </div>
+        </div>
+
+        <button class="btn-primary" id="btn-locate">📌 重新定位全台</button>
+    </div>
+
+    <!-- Bottom Legend -->
+    <div class="legend-panel">
+        <div class="legend-title" id="legend-title"></div>
+        <div class="legend-swatches" id="legend-swatches"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
